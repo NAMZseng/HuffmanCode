@@ -1,12 +1,12 @@
 
-//¶¨Òå×Ö·ûÆµÊı±í½á¹¹Ìå
+//å®šä¹‰å­—ç¬¦é¢‘æ•°è¡¨ç»“æ„ä½“
 struct sCharFreq
 {
-	unsigned char uch;   //´æ´¢×Ö·û
-	unsigned int freq;   //´æ´¢×Ö·ûµÄÔÚÎÄ¼şÖĞ³öÏÖÆµÊı
+	unsigned char uch;   //å­˜å‚¨å­—ç¬¦
+	unsigned int freq;   //å­˜å‚¨å­—ç¬¦çš„åœ¨æ–‡ä»¶ä¸­å‡ºç°é¢‘æ•°
 };
 
-//¶¨ÒåHuffmanÊ÷µÄ½áµãµÄ´æ´¢½á¹¹
+//å®šä¹‰Huffmanæ ‘çš„ç»“ç‚¹çš„å­˜å‚¨ç»“æ„
 struct huffNode
 {
 	unsigned char uch;        
@@ -16,22 +16,22 @@ struct huffNode
 	int father;
 };
 
-//¶¨ÒåHuffman±àÂë±í´æ´¢½á¹¹
+//å®šä¹‰Huffmanç¼–ç è¡¨å­˜å‚¨ç»“æ„
 struct huffCode
 {
-	unsigned char uch;      //ÏàÓ¦×Ö·û
-	char  *code; //×Ö·û¶ÔÓ¦µÄ¶ş½øÖÆ±àÂë£¨Ê¹ÓÃÖ¸Õë£¬Ö¸Ïò¶¯Ì¬ÉêÇëµÄÄÚ´æ£©
+	unsigned char uch;      //ç›¸åº”å­—ç¬¦
+	char  *code;            //å­—ç¬¦å¯¹åº”çš„äºŒè¿›åˆ¶ç¼–ç ï¼ˆä½¿ç”¨æŒ‡é’ˆï¼ŒæŒ‡å‘åŠ¨æ€ç”³è¯·çš„å†…å­˜ï¼‰
 };
 
 class HuffmanFileCode
 {
 private:
-	int kind;    //×Ö·ûÖÖÀà
-	unsigned int fileSize;        //±àÂëÎÄ¼ş´óĞ¡
-	sCharFreq *freqTable;     //×Ö·ûÆµÊı±í
+	int kind;                 //å­—ç¬¦ç§ç±»
+	unsigned int fileSize;    //ç¼–ç æ–‡ä»¶å¤§å°
+	sCharFreq *freqTable;     //å­—ç¬¦é¢‘æ•°è¡¨
 	huffNode *huffTree;
 	huffCode *codeTable;
-	char iFileName[260];   //windowsÀïÎÄ¼şÃû×î¶àÎª255¸ö×Ö·û
+	char iFileName[260];       //windowsé‡Œæ–‡ä»¶åæœ€å¤šä¸º255ä¸ªå­—ç¬¦
 	char oFileName[260];
 
 	void getFilesName();
@@ -43,9 +43,9 @@ private:
 	void showCodeTable();
 	void  saveCodes();
 	bool decoding();
-	void reset();  //ÊÍ·Å¶¯Ì¬ÉêÇëµÄÄÚ´æ¿Õ¼ä£¬½«Àà³ÉÔ±±äÁ¿ÖØĞÂ³õÊ¼»¯
+	void reset();  //é‡Šæ”¾åŠ¨æ€ç”³è¯·çš„å†…å­˜ç©ºé—´ï¼Œå°†ç±»æˆå‘˜å˜é‡é‡æ–°åˆå§‹åŒ–
 	
 public:
 	HuffmanFileCode();
-	void meau();  //¹¦ÄÜ²Ëµ¥£¬µ÷ÓÃÏà¹ØµÄÀà³ÉÔ±º¯Êı£¬ÊµÏÖÖ¸¶¨²Ù×÷
+	void meau();  //åŠŸèƒ½èœå•ï¼Œè°ƒç”¨ç›¸å…³çš„ç±»æˆå‘˜å‡½æ•°ï¼Œå®ç°æŒ‡å®šæ“ä½œ
 };
